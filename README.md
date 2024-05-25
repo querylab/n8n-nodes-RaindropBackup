@@ -1,47 +1,164 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+n8n Raindrop Backup Node
 
-# n8n-nodes-starter
+This is an n8n community node. It allows you to backup your Raindrop.io bookmarks, get user information, and generate new backups in your workflow.
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](n8n.io). It includes the node linter and other dependencies.
+Installation
 
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+No special requirement for this node.
 
-## Prerequisites
+Just follow the generic installation guide in the n8n community nodes documentation.
 
-You need the following installed on your development machine:
+NpmJs url: https://www.npmjs.com/package/n8n-nodes-raindropbackup
 
-* [git](https://git-scm.com/downloads)
-* Node.js and npm. Minimum version Node 16. You can find instructions on how to install both using nvm (Node Version Manager) for Linux, Mac, and WSL [here](https://github.com/nvm-sh/nvm). For Windows users, refer to Microsoft's guide to [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Install n8n with:
-	```
-	npm install n8n -g
-	```
-* Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
+NpmJs package name: n8n-nodes-raindropbackup
+
+    Go to Settings > Community Nodes, and click Install a community node.
+    Enter n8n-nodes-raindropbackup in Enter npm package name input.
+    Click Install.
+
+After installation, you can use the search bar to add the Raindrop Backup node to your workflow.
+
+Usage
+
+The node configuration is simple. Specify the credentials and the operation you want to perform.
+Credentials
+
+To use this node, you need to configure the Raindrop credentials in n8n. The Raindrop API credentials are already built into n8n. Follow the steps below to set it up:
+
+    In n8n, go to Credentials.
+    Create a new credential and select Raindrop API.
+    Click on Connect and follow the instructions to authorize n8n to access your Raindrop account.
 
 
-## Using this starter
+For more information on setting up Raindrop credentials, refer to the n8n documentation.
+Resources/Operations
 
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
+This section describes the operations available in this node.
+Resource	Operation	Description	Credentials required
+Backup	Generate New Backup	Generates a new backup of your Raindrop bookmarks.	Yes
+	Get Many	Fetches all backups created since the account was created.	Yes
+User	Get User	Fetches user information from Raindrop.io.	Yes
+Backup
+Generate New Backup - Requires credential
 
-1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
-    ```
-    git clone https://github.com/<your organization>/<your-repo-name>.git
-    ```
-3. Run `npm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `npm run lint` to check for errors or `npm run lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
+Generates a new backup of your Raindrop bookmarks.
 
-## More information
+Example output:
 
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
+json
 
-## License
+{
+  "result": {
+    "message": "We will send you email with html export file when it be ready! Time depends on bookmarks count and queue."
+  }
+}
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+Get Many - Requires credential
+
+Fetches all backups created since the account was created.
+
+Example output:
+
+json
+
+{
+  "result": {
+    "items": [
+      {
+        "_id": "665125b73d690ffb25b6880a",
+        "created": "2024-05-24T23:41:43.182Z"
+      },
+      {
+        "_id": "664a3fa2d1275c06f9c663e1",
+        "created": "2024-05-19T18:06:26.354Z"
+      },
+      // More items...
+    ]
+  }
+}
+
+User
+Get User - Requires credential
+
+Fetches user information from Raindrop.io.
+
+Example output:
+
+json
+
+{
+  "result": {
+    "user": {
+      "tfa": {
+        "enabled": true
+      },
+      "files": {
+        "used": 0,
+        "size": 100000000,
+        "lastCheckPoint": "2023-10-28T00:13:10.816Z"
+      },
+      "_id": "1737296",
+      "fullName": "pichon",
+      "name": "pichon",
+      "email": "admin@mail.com",
+      "avatar": "https://up.raindrop.io/user/avatars/00/00/0/12285535.png",
+      "pro": false,
+      "groups": [
+        {
+          "title": "Collections",
+          "hidden": false,
+          "sort": 0,
+          "collections": [
+            43256920,
+            43211905,
+            // More collections...
+          ]
+        }
+      ],
+      "lastAction": "2024-05-24T23:12:48.229Z",
+      "lastVisit": "2024-05-24T00:27:28.323Z",
+      "registered": "2023-10-28T00:13:10.817Z",
+      "lastUpdate": "2024-05-24T23:12:48.229Z",
+      "config": {
+        "default_collection_view": "grid",
+        "raindrops_hide": [
+          "list_excerpt",
+          "simple_excerpt",
+          "grid_excerpt",
+          "masonry_excerpt"
+        ],
+        "raindrops_buttons": [
+          "select",
+          "preview",
+          "edit",
+          "remove",
+          "new_tab"
+        ],
+        "raindrops_search_by_score": true,
+        "raindrops_search_incollection": false,
+        "broken_level": "default",
+        "font_size": 0,
+        "add_default_collection": -1,
+        "acknowledge": [],
+        "last_collection": 38758240,
+        "filters_hide": true,
+        "tags_hide": true,
+        "nested_view_legacy": true,
+        "ai_suggestions": true,
+        "password": true
+      }
+    }
+  }
+}
+
+Images
+<a href="https://imgur.com/DeUgFsK"><img src="https://i.imgur.com/DeUgFsK.png" title="source: imgur.com" /></a>
+
+<a href="https://imgur.com/ZDSdDno"><img src="https://i.imgur.com/ZDSdDno.png" title="source: imgur.com" /></a>
+
+<a href="https://imgur.com/LRKWeGp"><img src="https://i.imgur.com/LRKWeGp.png" title="source: imgur.com" /></a>
+
+---
+You can use a docker-compose.yml file to launch 2 containers, one with n8n and another with a mock Raindrop API for testing purposes.
+---
+

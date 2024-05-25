@@ -1,0 +1,10 @@
+version: '3'
+services:
+  n8n:
+    image: n8nio/n8n
+    environment:
+      - N8N_SECURE_COOKIE=false
+    volumes:
+      - ./dist:/home/node/.n8n/custom:ro
+    ports:
+      - "5678:5678"
