@@ -1,11 +1,10 @@
-## n8n Raindrop Backup Node
+# n8n Raindrop Backup Node
 
 This is an n8n community node. It allows you to backup your Raindrop.io bookmarks, get user information, and generate new backups in your workflow.
 
-Images
 <a href="https://imgur.com/DeUgFsK"><img src="https://i.imgur.com/DeUgFsK.png" title="source: imgur.com" /></a>
 
-#### Installation
+### Installation
 
 No special requirement for this node.
 
@@ -21,7 +20,7 @@ NpmJs package name: n8n-nodes-raindropbackup
 
 After installation, you can use the search bar to add the Raindrop Backup node to your workflow.
 
-#### Usage
+### Usage
 
 The node configuration is simple. Specify the credentials and the operation you want to perform.
 Credentials
@@ -38,7 +37,7 @@ For more information on setting up Raindrop credentials, refer to the n8n docume
 <a href="https://imgur.com/IYj1cDe"><img src="https://i.imgur.com/IYj1cDe.png" title="source: imgur.com" /></a>
 
 
-#### Resources/Operations
+### Resources/Operations
 
 This section describes the operations available in this node.
 
@@ -51,7 +50,7 @@ This section describes the operations available in this node.
 
 
 
-#### Generates a new backup of your Raindrop bookmarks.
+### Generates a new backup of your Raindrop bookmarks.
 
 Example output:
 
@@ -68,7 +67,7 @@ Example output:
 
 
 
-#### Get Many - Requires credential
+### Get Many - Requires credential
 
 Fetches all backups created since the account was created.
 
@@ -98,7 +97,7 @@ Example output:
 <a href="https://imgur.com/LRKWeGp"><img src="https://i.imgur.com/LRKWeGp.png" title="source: imgur.com" /></a>
 
 
-#### Get User - Requires credential
+### Get User - Requires credential
 
 Fetches user information from Raindrop.io.
 
