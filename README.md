@@ -67,7 +67,7 @@ Example output:
 
 
 
-### Get Many - Requires credential
+### Get Many
 
 Fetches all backups created since the account was created.
 
@@ -97,7 +97,7 @@ Example output:
 <a href="https://imgur.com/LRKWeGp"><img src="https://i.imgur.com/LRKWeGp.png" title="source: imgur.com" /></a>
 
 
-### Get User - Requires credential
+### Get User
 
 Fetches user information from Raindrop.io.
 
