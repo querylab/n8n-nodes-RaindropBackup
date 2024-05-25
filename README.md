@@ -1,8 +1,11 @@
-n8n Raindrop Backup Node
+## n8n Raindrop Backup Node
 
 This is an n8n community node. It allows you to backup your Raindrop.io bookmarks, get user information, and generate new backups in your workflow.
 
-Installation
+Images
+<a href="https://imgur.com/DeUgFsK"><img src="https://i.imgur.com/DeUgFsK.png" title="source: imgur.com" /></a>
+
+#### Installation
 
 No special requirement for this node.
 
@@ -18,7 +21,7 @@ NpmJs package name: n8n-nodes-raindropbackup
 
 After installation, you can use the search bar to add the Raindrop Backup node to your workflow.
 
-Usage
+#### Usage
 
 The node configuration is simple. Specify the credentials and the operation you want to perform.
 Credentials
@@ -41,26 +44,31 @@ User	Get User	Fetches user information from Raindrop.io.	Yes
 Backup
 Generate New Backup - Requires credential
 
-Generates a new backup of your Raindrop bookmarks.
+#### Generates a new backup of your Raindrop bookmarks.
 
 Example output:
 
-json
-
+``` JASON
 {
   "result": {
     "message": "We will send you email with html export file when it be ready! Time depends on bookmarks count and queue."
   }
 }
 
-Get Many - Requires credential
+```
+
+<a href="https://imgur.com/ZDSdDno"><img src="https://i.imgur.com/ZDSdDno.png" title="source: imgur.com" /></a>
+
+
+
+#### Get Many - Requires credential
 
 Fetches all backups created since the account was created.
 
 Example output:
 
-json
 
+``` JASON
 {
   "result": {
     "items": [
@@ -77,15 +85,19 @@ json
   }
 }
 
-User
-Get User - Requires credential
+```
+
+
+<a href="https://imgur.com/LRKWeGp"><img src="https://i.imgur.com/LRKWeGp.png" title="source: imgur.com" /></a>
+
+
+#### Get User - Requires credential
 
 Fetches user information from Raindrop.io.
 
 Example output:
 
-json
-
+``` JASON
 {
   "result": {
     "user": {
@@ -151,14 +163,8 @@ json
   }
 }
 
-Images
-<a href="https://imgur.com/DeUgFsK"><img src="https://i.imgur.com/DeUgFsK.png" title="source: imgur.com" /></a>
+```
 
-<a href="https://imgur.com/ZDSdDno"><img src="https://i.imgur.com/ZDSdDno.png" title="source: imgur.com" /></a>
-
-<a href="https://imgur.com/LRKWeGp"><img src="https://i.imgur.com/LRKWeGp.png" title="source: imgur.com" /></a>
-
----
 You can use a docker-compose.yml file to launch 2 containers, one with n8n and another with a mock Raindrop API for testing purposes.
----
+
 
