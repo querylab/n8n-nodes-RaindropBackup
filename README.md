@@ -33,16 +33,23 @@ To use this node, you need to configure the Raindrop credentials in n8n. The Rai
     Click on Connect and follow the instructions to authorize n8n to access your Raindrop account.
 
 
-For more information on setting up Raindrop credentials, refer to the n8n documentation.
-Resources/Operations
+For more information on setting up Raindrop credentials, refer to the n8n documentation.  https://docs.n8n.io/integrations/builtin/credentials/raindrop/#using-oauth 
+
+<a href="https://imgur.com/IYj1cDe"><img src="https://i.imgur.com/IYj1cDe.png" title="source: imgur.com" /></a>
+
+
+#### Resources/Operations
 
 This section describes the operations available in this node.
-Resource	Operation	Description	Credentials required
-Backup	Generate New Backup	Generates a new backup of your Raindrop bookmarks.	Yes
-	Get Many	Fetches all backups created since the account was created.	Yes
-User	Get User	Fetches user information from Raindrop.io.	Yes
-Backup
-Generate New Backup - Requires credential
+
+| Resource | Operation           | Description                                                | Credentials required |
+| -------- | ------------------- | ---------------------------------------------------------- | -------------------- |
+| Backup   | Generate New Backup | Generates a new backup of your Raindrop bookmarks.         | Yes                  |
+|          | Get Many            | Fetches all backups created since the account was created. | Yes                  |
+| User     | Get User            | Fetches user information from Raindrop.io.                 | Yes                  |
+
+
+
 
 #### Generates a new backup of your Raindrop bookmarks.
 
